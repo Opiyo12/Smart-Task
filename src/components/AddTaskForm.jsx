@@ -1,18 +1,42 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { FaFilter } from 'react-icons/fa'
+import { TaskContext } from '../context/TaskContext';
+
+
 
 
 const AddTaskForm = () => {
+    
+   const{tasks, setTask}=useContext(TaskContext);
+   const[taskInputText, setTaskInputText]= useState("");
+   //initialising useContext global state
+  
+   const saveTaskButton=()=>{
+    if(taskInputText.trim()==="")return;
+   //each new task should be inform of object
+   const newTask={
+    id:Date.now(),
+    text:taskInputText,
+    completed:false,
+    CreatedAt:new Date().toLocaleString()
+    }
+   setTask([...tasks, newTask])
+   setTaskInputText("");
+
+   }
   return (
    <div className="mt-8 bg-white dark:bg-gray-800 p-6 rounded-xl shadow">
   <div className="flex items-center gap-2 mb-4">
     <input
+    onChange={(e)=>setTaskInputText(e.target.value)}
       type="text"
       placeholder="Enter your task..."
-      className="flex-grow bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200
+      className="grow bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200
         px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
     />
-    <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold shadow">
+    <button 
+    onClick={saveTaskButton}
+    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold shadow">
       Add
     </button>
   </div>
