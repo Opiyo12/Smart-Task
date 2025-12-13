@@ -9,6 +9,8 @@ const AddTaskForm = () => {
     
    const{tasks, setTask}=useContext(TaskContext);
    const[taskInputText, setTaskInputText]= useState("");
+   const{filteredStatus, setFilteredStatus}=useContext(TaskContext);
+   
    //initialising useContext global state
   
    const saveTaskButton=()=>{
@@ -28,7 +30,8 @@ const AddTaskForm = () => {
    <div className="mt-8 bg-white dark:bg-gray-800 p-6 rounded-xl shadow">
   <div className="flex items-center gap-2 mb-4">
     <input
-    onChange={(e)=>setTaskInputText(e.target.value)}
+    value={taskInputText}
+     onChange={(e)=>setTaskInputText(e.target.value)}
       type="text"
       placeholder="Enter your task..."
       className="grow bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200
@@ -48,11 +51,13 @@ const AddTaskForm = () => {
     </div>
 
     <select
+    value={filteredStatus}
+    onChange={(e)=>setFilteredStatus(e.target.value)}
       className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-2 
       rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
     >
       <option value="all">All</option>
-      <option value="active">Active</option>
+      <option value="pending">Pending</option>
       <option value="completed">Completed</option>
     </select>
   </div>
