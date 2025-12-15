@@ -8,7 +8,7 @@ import { TaskContext, TaskProvider } from './context/TaskContext.jsx';
 function App() {
 
  const[isDark, setIsDark]=useState(()=>getItem("theme", false))
- const{tasks, setTask}= useContext(TaskContext);
+
  //persistence to local storage
  useEffect(()=>{
     setItem("theme", isDark)  
