@@ -21,7 +21,7 @@ const deleteTask=(id)=>{
 return(
     <TaskContext.Provider
     value={{tasks,setTask, deleteTask, filteredStatus, setFilteredStatus}}
-    >
+    > 
      {children}
     </TaskContext.Provider>
 );

@@ -32,6 +32,11 @@ const AddTaskForm = () => {
     <input
     value={taskInputText}
      onChange={(e)=>setTaskInputText(e.target.value)}
+      onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            saveTaskButton();
+          }
+        }}
       type="text"
       placeholder="Enter your task..."
       className="grow bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200
