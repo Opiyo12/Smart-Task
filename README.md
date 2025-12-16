@@ -1,16 +1,50 @@
-# React + Vite
+ SmartTask
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
+SmartTask is a simple, interactive task management application built with React. 
+It utilizes the Context API for global state management and Tailwind CSS for styling. 
+Users can add, edit, delete, and filter tasks based on completion status.
 
-Currently, two official plugins are available:
+## Technologies Used
+Frontend: React.js
+State Management: React Context API
+Styling: Tailwind CSS
+Icons: React Icons
+/src
+ ├─ /components
+      |-- Header.jsx
+ │    ├─ AddTaskForm.jsx      # Form component to add new tasks
+ │    ├─ TaskItemList.jsx     # List of tasks with Edit/Delete actions
+ │    ├─ ui
+ │    │   └─ Modal.jsx        # Reusable modal component
+ ├─ /context
+ │    └─ TaskContext.jsx      # Context API state management
+ ├─ App.jsx                   # Main app component
+ └─ index.js                  # App entry point
+ # Features
+ ## 1. Add Task
+## 2. Edit Task
+## 3. Delete Task
+## 4. Task Completion
+## 5. Task Filtering
+## 6. Task Statistics
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Screenshots
+### Task List
+![Task List and Light Mode](screenshot/lightmode.png)
 
-## React Compiler
+### Edit Task
+![Edit Task](screenshot/taskedit.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Delete Task
+![Delete Task](screenshot/taskdelete.png)
 
-## Expanding the ESLint configuration
+### Light Mode vs Dark Mode
+| Light Mode | Dark Mode |
+|-----------|-----------|
+| ![Light](screenshot/lightmode.png) | ![Dark](screenshot/darkmode.png) |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+# Installation
+npm install
+npm run dev
